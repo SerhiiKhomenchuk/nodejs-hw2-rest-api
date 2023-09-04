@@ -1,7 +1,5 @@
 /** @format */
 
-const HttpError = require("../helpers");
-
 const {
   listContacts,
   getContactById,
@@ -11,6 +9,7 @@ const {
 } = require("../models/contacts");
 
 const ctrlWrapper = require("../helpers/ctrlWrapper");
+const { HttpError } = require("../helpers");
 
 const getAll = async (req, res) => {
   const result = await listContacts();
