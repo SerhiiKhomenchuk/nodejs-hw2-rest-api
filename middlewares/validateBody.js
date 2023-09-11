@@ -10,7 +10,10 @@ const validateBody = (schema) => {
       let errorMessage;
 
       if (!Object.keys(req.body).length) {
-        errorMessage = "missing fields";
+        const methodPatch = req.method === "PATCH";
+        errorMessage = methodPatch
+          ? "missing field favorite"
+          : "missing fields";
         next(HttpError(400, errorMessage));
         return;
       }
