@@ -13,12 +13,17 @@ const contactsShema = new Schema(
     },
     phone: {
       type: String,
-      match: /^\+38\(\d{3}\)\d{3}-\d{2}-\d{2}$/,
+      match: /^\+38\(\d{3}\)\d{3}-\d{2}-\d{2}$/, // +38(XXX)XXX-XX-XX
       required: true,
     },
     favorite: {
       type: Boolean,
       default: false,
+    },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
     },
   },
   { versionKey: false, timestamps: true },
