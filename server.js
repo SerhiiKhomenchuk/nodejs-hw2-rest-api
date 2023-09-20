@@ -19,8 +19,5 @@ async function run() {
     console.log(error);
     process.exit(1);
   }
-  // finally {
-  //   mongoose.disconnect();
-  // }
 }
 run();
